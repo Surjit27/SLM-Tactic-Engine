@@ -253,3 +253,22 @@ Use this default production baseline:
 - small MLP fusion head
 - periodic RL fine-tuning with strict latency gates
 - optional Vector DB retrieval for rare-case decision support
+
+
+flowchart LR
+    A[UI Client] --> B[POST /predict]
+    B --> C[Gateway Validation]
+    C --> D[Feature Builder obs256]
+    D --> E[Optional Vector Retrieval]
+    E --> F[Tactical Planner]
+    F --> G[Aim Head]
+    F --> H[Movement Head]
+    F --> I[Weapon Head]
+    G --> J[Fusion Head]
+    H --> J
+    I --> J
+    J --> K[Safety Clamp + Humanization]
+    K --> L{Latency < 15ms?}
+    L -- Yes --> M[Return action32]
+    L -- No --> N[Return previous safe action]
+
