@@ -1,3 +1,4 @@
+<img width="5187" height="3886" alt="diagram-export-23-04-2026-18_47_11" src="https://github.com/user-attachments/assets/7660edbf-ec80-407e-82a4-ff6c946f9742" />
 # Master End-to-End Guide
 ## AI model training, fields, latency measurement, and Vector DB
 
@@ -233,34 +234,6 @@ If any fails, reject candidate and continue refinement.
 
 ---
 
-## 11) Flowchart-ready architecture
-
-```mermaid
-flowchart TD
-    A[Telemetry + Simulation Data] --> B[Feature Build + Schema Validation]
-    B --> C[Datasets: obs256 action32 labels]
-    C --> D[Supervised Warm Start]
-    D --> E[SLM Tactical + Specialist Heads]
-    E --> F[RL Refinement Loop]
-    F --> G[Champion vs Challenger]
-    G --> H{Quality/Safety pass?}
-    H -- No --> F
-    H -- Yes --> I[Latency Bench p95 p99]
-    I --> J{Latency pass?}
-    J -- No --> F
-    J -- Yes --> K[Canary Deployment]
-    K --> L[Runtime Inference]
-    L --> M[Vector DB Retrieval Optional]
-    M --> N[SLM Tactical Decision]
-    N --> O[Aim + Movement + Weapon]
-    O --> P[Fusion -> action32]
-    P --> Q{Budget exceeded?}
-    Q -- Yes --> R[Fallback previous safe action]
-    Q -- No --> S[Apply action]
-```
-
----
-
 ## 12) Run commands
 
 ```powershell
@@ -270,6 +243,7 @@ uvicorn app.main:app --host 0.0.0.0 --port 8000
 ```
 
 ---
+<img width="5187" height="3886" alt="diagram-export-23-04-2026-18_47_11" src="https://github.com/user-attachments/assets/bcebe69e-733c-46fc-b7b5-5573ad8c7f48" />
 
 ## 13) Final recommendation
 
