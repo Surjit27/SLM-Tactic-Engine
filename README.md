@@ -1,4 +1,3 @@
-<img width="5187" height="3886" alt="diagram-export-23-04-2026-18_47_11" src="https://github.com/user-attachments/assets/7660edbf-ec80-407e-82a4-ff6c946f9742" />
 # Master End-to-End Guide
 ## AI model training, fields, latency measurement, and Vector DB
 
